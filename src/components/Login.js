@@ -7,16 +7,11 @@ function Login() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-    // Basic validation
-    if (email && password) {
-      alert('Login successful!');
-      navigate('/home');
-    } else {
-      alert('Please fill in all fields');
-    }
-  };
+    console.log('Login attempt with:', email, password);
+    navigate('/home');
+  }
 
   return (
     <div className="login-container">
@@ -29,7 +24,7 @@ function Login() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
+              required
             />
           </div>
           <div className="form-group">
@@ -38,10 +33,13 @@ function Login() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your password"
+              required
             />
           </div>
           <button type="submit">Login</button>
+          <p className="signup-link">
+            Don't have an account? <a href="/signup">Sign up here</a>
+          </p>
         </form>
       </div>
     </div>
