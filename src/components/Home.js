@@ -3,11 +3,28 @@ import './Home.css';
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
   const handleSearch = (e) => {
     e.preventDefault();
     // Simple console log for now
     console.log('Searching for:', searchQuery);
+  };
+
+  const handleContactSubmit = (e) => {
+    e.preventDefault();
+    console.log('Contact form submitted:', contactForm);
+  };
+
+  const handleContactChange = (e) => {
+    setContactForm({
+      ...contactForm,
+      [e.target.name]: e.target.value
+    });
   };
 
   // Simple array of destinations
@@ -131,6 +148,48 @@ function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Simple Contact section */}
+      <div className="contact-section" id="contact">
+        <h2>Contact Us</h2>
+        <div className="contact-content">
+          <form onSubmit={handleContactSubmit} className="contact-form">
+            <div className="form-group">
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={contactForm.name}
+                onChange={handleContactChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={contactForm.email}
+                onChange={handleContactChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                value={contactForm.message}
+                onChange={handleContactChange}
+                required
+              ></textarea>
+            </div>
+            <button type="submit" className="submit-button">Send Message</button>
+          </form>
         </div>
       </div>
     </div>
