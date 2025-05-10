@@ -91,8 +91,33 @@ function Home() {
         </div>
       </div>
 
+      {/* Simple About section */}
+      <div className="about-section" id="about">
+        <h2>About Us</h2>
+        <div className="about-content">
+          <div className="about-text">
+            <h3>Your Travel Guide</h3>
+            <p>We help you find the best places to visit in India. From famous monuments to beautiful beaches, we have it all!</p>
+          </div>
+          <div className="about-features">
+            <div className="feature">
+              <h4>Easy Booking</h4>
+              <p>Book your trips easily</p>
+            </div>
+            <div className="feature">
+              <h4>Best Prices</h4>
+              <p>Get the best deals</p>
+            </div>
+            <div className="feature">
+              <h4>Safe Travel</h4>
+              <p>Travel with confidence</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Destinations section */}
-      <div className="destinations-section">
+      <div className="destinations-section" id="destinations">
         <h2>Popular Places</h2>
         <div className="destinations-grid">
           {destinations.map(destination => (

@@ -161,4 +161,63 @@
   .destinations-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Simple About section styles */
+.about-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.about-section h2 {
+  text-align: center;
+  color: #1e3c72;
+  margin-bottom: 40px;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-text {
+  text-align: center;
+}
+
+.about-text h3 {
+  color: #1e3c72;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.feature {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.feature h4 {
+  color: #1e3c72;
+  margin-bottom: 15px;
+}
+
+.feature p {
+  color: #666;
 } 
