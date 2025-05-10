@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 
 function Home() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    // Simple console log for now
+    console.log('Searching for:', searchQuery);
+  };
+
   // Simple array of destinations
   const destinations = [
     {
@@ -63,8 +71,24 @@ function Home() {
 
       {/* Hero section */}
       <div className="hero-section">
-        <h2>Welcome to India</h2>
-        <p>Explore beautiful places</p>
+        <h1>Welcome to India Travel Guide</h1>
+        <p>Discover amazing places to visit in India</p>
+        
+        {/* Simple search bar */}
+        <div className="search-container">
+          <form onSubmit={handleSearch}>
+            <input
+              type="text"
+              placeholder="Search places..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="search-input"
+            />
+            <button type="submit" className="search-button">
+              Search
+            </button>
+          </form>
+        </div>
       </div>
 
       {/* Destinations section */}
