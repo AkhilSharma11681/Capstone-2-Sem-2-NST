@@ -11,6 +11,11 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .header h1 {
@@ -26,6 +31,8 @@
 .nav-links a {
   color: #1e3c72;
   text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -36,7 +43,7 @@
   background-image: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
   background-size: cover;
   background-position: center;
-  height: 500px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,18 +51,21 @@
   text-align: center;
   color: white;
   padding: 20px;
+  margin-top: 80px;
 }
 
 .hero-section h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInDown 1s ease;
 }
 
 .hero-section p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-bottom: 2rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease;
 }
 
 /* Simple search bar styles */
@@ -63,20 +73,22 @@
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  animation: fadeIn 1.5s ease;
 }
 
 .search-input {
   width: 70%;
-  padding: 12px 20px;
+  padding: 15px 25px;
   font-size: 16px;
   border: none;
   border-radius: 25px 0 0 25px;
   outline: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .search-button {
   width: 30%;
-  padding: 12px 20px;
+  padding: 15px 25px;
   font-size: 16px;
   background-color: #4CAF50;
   color: white;
@@ -84,6 +96,7 @@
   border-radius: 0 25px 25px 0;
   cursor: pointer;
   transition: background-color 0.3s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .search-button:hover {
@@ -91,7 +104,7 @@
 }
 
 .destinations-section {
-  padding: 40px 20px;
+  padding: 60px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -99,20 +112,26 @@
 .destinations-section h2 {
   text-align: center;
   color: #1e3c72;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
 }
 
 .destinations-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 30px;
 }
 
 .destination-card {
   background-color: white;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
 }
 
 .destination-card img {
@@ -128,6 +147,7 @@
 .card-content h3 {
   color: #1e3c72;
   margin: 0 0 10px 0;
+  font-size: 1.4rem;
 }
 
 .card-content p {
@@ -137,12 +157,14 @@
 
 .card-content button {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #1e3c72;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
 .card-content button:hover {
@@ -150,14 +172,32 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .nav-links {
+    margin-top: 15px;
+  }
+
+  .hero-section {
+    height: 500px;
+    margin-top: 120px;
+  }
+
   .hero-section h1 {
-    font-size: 30px;
+    font-size: 2rem;
   }
-  
+
   .hero-section p {
-    font-size: 16px;
+    font-size: 1.1rem;
   }
-  
+
+  .search-container {
+    width: 90%;
+  }
+
   .destinations-grid {
     grid-template-columns: 1fr;
   }
@@ -165,14 +205,15 @@
 
 /* Simple About section styles */
 .about-section {
-  padding: 60px 20px;
+  padding: 80px 20px;
   background-color: #f9f9f9;
 }
 
 .about-section h2 {
   text-align: center;
   color: #1e3c72;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
 }
 
 .about-content {
@@ -180,7 +221,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 50px;
 }
 
 .about-text {
@@ -190,12 +231,15 @@
 .about-text h3 {
   color: #1e3c72;
   margin-bottom: 20px;
+  font-size: 2rem;
 }
 
 .about-text p {
   color: #666;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .about-features {
@@ -208,14 +252,20 @@
 .feature {
   background-color: white;
   padding: 30px;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
 }
 
 .feature h4 {
   color: #1e3c72;
   margin-bottom: 15px;
+  font-size: 1.4rem;
 }
 
 .feature p {
@@ -224,14 +274,15 @@
 
 /* Simple Contact section styles */
 .contact-section {
-  padding: 60px 20px;
+  padding: 80px 20px;
   background-color: #f0f0f0;
 }
 
 .contact-section h2 {
   text-align: center;
   color: #1e3c72;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
 }
 
 .contact-content {
@@ -241,9 +292,9 @@
 
 .contact-form {
   background-color: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .form-group {
@@ -254,15 +305,23 @@
   display: block;
   margin-bottom: 8px;
   color: #1e3c72;
+  font-weight: 500;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #1e3c72;
+  outline: none;
 }
 
 .form-group textarea {
@@ -272,11 +331,11 @@
 
 .submit-button {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   background-color: #1e3c72;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -284,4 +343,174 @@
 
 .submit-button:hover {
   background-color: #2a5298;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  animation: slideIn 0.3s ease;
+}
+
+.modal-content h2 {
+  color: #1e3c72;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cancel-button {
+  background-color: #dc3545;
+}
+
+.cancel-button:hover {
+  background-color: #c82333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Featured Section */
+.featured-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.featured-section h2 {
+  text-align: center;
+  color: #1e3c72;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.featured-card::before {
+  content: 'Featured';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff6b6b;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.featured-card:hover {
+  transform: translateY(-5px);
+}
+
+.featured-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Price Filter */
+.filter-container {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  padding: 0 20px;
+}
+
+.price-filter {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: white;
+  color: #1e3c72;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.price-filter:focus {
+  outline: none;
+  border-color: #1e3c72;
+}
+
+.price {
+  font-weight: bold;
+  color: #1e3c72;
+  margin: 10px 0;
 } 
