@@ -251,6 +251,31 @@ function Home() {
         </div>
       </div>
 
+      {/* Testimonials Section */}
+      <section className="testimonials-section">
+        <h2>What Our Travelers Say</h2>
+        <div className="testimonials-grid">
+          <div className="testimonial-card">
+            <div className="testimonial-content">
+              "Amazing experience! The booking process was smooth and the trip was unforgettable."
+            </div>
+            <div className="testimonial-author">- Sarah Johnson</div>
+          </div>
+          <div className="testimonial-card">
+            <div className="testimonial-content">
+              "Great service and wonderful destinations. Will definitely book again!"
+            </div>
+            <div className="testimonial-author">- Mike Thompson</div>
+          </div>
+          <div className="testimonial-card">
+            <div className="testimonial-content">
+              "Best travel website I've used. Everything was perfect from start to finish."
+            </div>
+            <div className="testimonial-author">- Emily Davis</div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact section */}
       <div className="contact-section" id="contact">
         <h2>Contact Us</h2>
@@ -354,6 +379,34 @@ function Home() {
           </div>
         </div>
       )}
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: info@travelwebsite.com</p>
+            <p>Phone: +1 234 567 890</p>
+          </div>
+          <div className="footer-section">
+            <h3>Follow Us</h3>
+            <div className="social-links">
+              <a href="#" className="social-link">Facebook</a>
+              <a href="#" className="social-link">Twitter</a>
+              <a href="#" className="social-link">Instagram</a>
+            </div>
+          </div>
+          <div className="footer-section">
+            <h3>Quick Links</h3>
+            <a href="#" className="footer-link">About Us</a>
+            <a href="#" className="footer-link">Destinations</a>
+            <a href="#" className="footer-link">Contact</a>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <p>&copy; 2024 Travel Website. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 }
