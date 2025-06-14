@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Home.css';
+import Gallery from './Gallery';
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -251,6 +252,9 @@ function Home() {
         </div>
       </div>
 
+      {/* Gallery section */}
+      <Gallery />
+
       {/* Testimonials Section */}
       <section className="testimonials-section">
         <h2>What Our Travelers Say</h2>
@@ -379,34 +383,6 @@ function Home() {
           </div>
         </div>
       )}
-
-      {/* Footer */}
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-section">
-            <h3>Contact Us</h3>
-            <p>Email: info@travelwebsite.com</p>
-            <p>Phone: +1 234 567 890</p>
-          </div>
-          <div className="footer-section">
-            <h3>Follow Us</h3>
-            <div className="social-links">
-              <a href="#" className="social-link">Facebook</a>
-              <a href="#" className="social-link">Twitter</a>
-              <a href="#" className="social-link">Instagram</a>
-            </div>
-          </div>
-          <div className="footer-section">
-            <h3>Quick Links</h3>
-            <a href="#" className="footer-link">About Us</a>
-            <a href="#" className="footer-link">Destinations</a>
-            <a href="#" className="footer-link">Contact</a>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>&copy; 2024 Travel Website. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
   );
 }
