@@ -21,12 +21,8 @@ function Home() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    const filteredDestinations = destinations.filter(dest => 
-      dest.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      dest.description.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    // For now, we'll just log the results
-    console.log('Search results:', filteredDestinations);
+    // For now, we'll just log the search query
+    console.log('Searching for:', searchQuery);
   };
 
   const handlePriceFilter = (e) => {
@@ -150,45 +146,36 @@ function Home() {
 
   return (
     <div className="home-container">
-      {/* Header */}
-      <div className="header">
-        <h1>Travel India</h1>
-        <div className="nav-links">
+      <header className="header">
+        <h1>Incredible India</h1>
+        <nav>
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#destinations">Destinations</a>
           <a href="#contact">Contact</a>
-        </div>
-      </div>
+        </nav>
+      </header>
 
-      {/* Hero section */}
       <div className="hero-section">
-        <h1>Welcome to India Travel Guide</h1>
-        <p>Discover amazing places to visit in India</p>
+        <h2>Discover India's Hidden Treasures</h2>
+        <p>Explore the rich culture and heritage of India</p>
         
-        {/* Search bar */}
-        <div className="search-container">
-          <form onSubmit={handleSearch}>
-            <input
-              type="text"
-              placeholder="Search places..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="search-input"
-            />
-            <button type="submit" className="search-button">
-              Search
-            </button>
-          </form>
-        </div>
+        <form onSubmit={handleSearch} className="search-form">
+          <input
+            type="text"
+            placeholder="Search destinations..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <button type="submit">Search</button>
+        </form>
       </div>
 
-      {/* Featured Destinations */}
       <div className="featured-section">
         <h2>Featured Destinations</h2>
-        <div className="featured-grid">
+        <div className="destinations-grid">
           {featuredDestinations.map(destination => (
-            <div key={destination.id} className="featured-card">
+            <div key={destination.id} className="destination-card">
               <img src={destination.image} alt={destination.title} />
               <div className="card-content">
                 <h3>{destination.title}</h3>
@@ -201,27 +188,20 @@ function Home() {
         </div>
       </div>
 
-      {/* About section */}
       <div className="about-section" id="about">
-        <h2>About Us</h2>
-        <div className="about-content">
-          <div className="about-text">
-            <h3>Your Travel Guide</h3>
-            <p>We help you find the best places to visit in India. From famous monuments to beautiful beaches, we have it all!</p>
+        <h2>Why Choose Us?</h2>
+        <div className="features-grid">
+          <div className="feature-card">
+            <h3>Best Prices</h3>
+            <p>Get the best deals on your travel packages</p>
           </div>
-          <div className="about-features">
-            <div className="feature">
-              <h4>Easy Booking</h4>
-              <p>Book your trips easily</p>
-            </div>
-            <div className="feature">
-              <h4>Best Prices</h4>
-              <p>Get the best deals</p>
-            </div>
-            <div className="feature">
-              <h4>Safe Travel</h4>
-              <p>Travel with confidence</p>
-            </div>
+          <div className="feature-card">
+            <h3>Expert Guides</h3>
+            <p>Travel with experienced local guides</p>
+          </div>
+          <div className="feature-card">
+            <h3>24/7 Support</h3>
+            <p>We're always here to help you</p>
           </div>
         </div>
       </div>
